@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Uget || Home{% endblock %}
+
+{% block content %}
+<section class="vh-75 cbg flex flex-row">
+    <div class="flex flex-column items-center justify-center">
+        <h1 class="lh-copy mw7 mw6-ns hot-pink">
+            A Journey of a thousand miles just starts with the very first step!
+        </h1>
+        <h4 class="lh-title green">How do you know you will fail... if you never try?</h4>
+    </div>
+</section>
+<section id="order" class="pt4 pt5-ns bg-washed-green">
+    <h3 class="tc">Send Items</h3>
+    <div class="tc">
+        {% if message %}
+        <div class="m-auto dib w-70-ns mv1">
+            <div class=" {{ css }} ">
+                <span class="white f3">{{ message }}</span>
+            </div>
+        </div>
+        {% endif %}
+        <form action="#order" method="post" class="mh2 mh5-ns" novalidate="novalidate" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="flex flex-column">
+                <div class="flex flex-row">
+                    <div class="form-group">
+                        <label for="id_fullname">Enter Fullname:</label>
+                        {{ form.fullname }}
+                    </div>
+                </div>
+                <div class="flex flex-row">
+                    <div class="form-group">
+                        <label for="id_mail">Enter E-mail:</label>
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="flex flex-row">
+                    <div class="form-group">
+                        <label for="id_address">Enter Address:</label>
+                        {{ form.address }}
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-column">
+                <div class="flex flex-row">
+                    <div class="form-group">
+                        <label for="id_description" class="v-top">Enter Description:</label>
+                        {{ form.description }}
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-column">
+                <div class="flex flex-row">
+                    <div class="form-group">
+                        <label for="image_uploads" class="pv2 ph4 bg-hot-pink br2 pointer grow">Add images(if any):</label>
+                        <input id="image_uploads" type="file" name="images" multiple>
+                    </div>
+                </div>
+                <div class="preview"></div>
+            </div>
+            <div class="flex flex-row">
+                <div class="col-xs-12 pa3">
+                    <div class="form-group">
+                        <button type="submit" class="br2 pa3 bg-blue white pointer grow">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

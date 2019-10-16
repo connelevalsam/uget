@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tachyons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body class="w-100">
+<main>
+    <header class="bg-red pv2">
+        <div class="tc dib w-100 w-30-ns">
+            <a href="index.html" class="white f1 fw6 mv4 link">CB_NET</a>
+        </div><div class="tc tr-ns pr2 w-100 w-70-ns dib v-top pt2 pt3-ns">
+        <a href="index.html" class="mr2 mr3-m mr4-l link dim white">Home</a>
+        <a href="#order" class="mr2 mr3-m mr4-l link dim white">Order</a>
+        <a href="about.html" class="mr2 mr3-m mr4-l link dim white">About</a>
+    </div>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+    <footer class="tc bg-navy pv2">
+        <span class="white pv2">&copy; connelblaze 2019</span>
+    </footer>
+</main>
+<script src="{% static 'js/image_upload.js' %}"></script>
+</body>
+</html>

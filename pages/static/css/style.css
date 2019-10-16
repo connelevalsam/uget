@@ -1,0 +1,53 @@
+{% load static %}
+.cbg {
+    background: url('/static/img/bg.jpeg');
+    background-size: cover;
+}
+.sidebar {
+    flex-grow: 1;
+}
+.content {
+    flex-grow: 2;
+}
+
+/* the navs */
+.hamburger {
+    position: absolute;
+    left: 2em;
+    top: 2em;
+    transform: translate(-50%, -50%)
+}
+    .hamburger img {
+        width: 30px;
+        cursor: pointer;
+    }
+
+.search {
+    position: absolute;
+    right: 1em;
+    top: 2em;
+    transform: translate(-50%, -50%)
+}
+    .search img {
+        width: 30px;
+        cursor: pointer;
+    }
+
+
+.copyright {
+    margin: 2em 0 0 0;
+    line-height: 1.5;
+}
+
+.footer {
+    background: #00276f;
+}
+    .footer h2 {
+        font-family: "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.3em;
+    }
+
+.footer-social {
+    background: #0a43ad;
+}
+
